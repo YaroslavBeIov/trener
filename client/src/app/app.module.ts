@@ -6,6 +6,7 @@ import { HomeComponent } from "./home/home.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { AppRoutingModule } from "./app.routes";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from "@angular/forms";
     imports: [
         BrowserModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        AppRoutingModule
     ],
     providers:[],
     bootstrap:[AppComponent]

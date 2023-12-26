@@ -1,9 +1,16 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes/routes');
+const cors = require('cors')
 
 const app = express()
 mongoose.set('strictQuery', false)
+
+app.use(cors(
+  {
+    origin: "http://localhost:4200"
+  }
+))
 
 app.listen(3000, (error) => {
   if (error) {
