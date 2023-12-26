@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,5 +9,33 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  firstname: string=""
+  lastname: string=""
+  email: string=""
+  password: string=""
 
+  constructor(private http:HttpClient){
+
+  }
+
+  ngOnInit():void{
+
+  }
+
+  register(){
+    let bodyData={
+      "firstname": this.firstname,
+      "lastname": this.lastname,
+      "email": this.email,
+      "password": this.password
+    }
+    this.http.post("http//localhost:3000/trener/create", bodyData).subscribe((resultData: any)=>{
+      console.log(resultData)
+      alert("Тренер зарегестрирован")
+    })
+  }
+
+  save(){
+    this.register
+  }
 }
