@@ -3,14 +3,14 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-trainer',
   standalone: true,
   imports: [FormsModule, HttpClientModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  templateUrl: './trainer.component.html',
+  styleUrl: './trainer.component.css'
 })
 
-export class RegisterComponent {
+export class TrainerComponent {
   firstname: string=""
   lastname: string=""
   email: string=""

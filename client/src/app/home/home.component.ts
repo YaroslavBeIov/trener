@@ -1,12 +1,24 @@
+// home.component.ts
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  isAuthenticated: boolean = false;
 
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit() {
+    // Проверка статуса авторизации при инициализации компонента
+    this.isAuthenticated = this.authService.isLoggedIn();
+  }
+
+  redirectTo(route: string) {
+    this.router.navigate([`/${route}`]);
+  }
 }

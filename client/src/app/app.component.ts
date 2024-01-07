@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,4 +12,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'client';
+
+  constructor(private router: Router) {}
+  
+  redirectToHome() {
+    this.router.navigate(['/home']); // Перенаправление на роут 'home'
+  }
 }
