@@ -1,12 +1,44 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-trainee',
+  selector: 'app-trainer',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, HttpClientModule],
   templateUrl: './trainee.component.html',
   styleUrl: './trainee.component.css'
 })
-export class TraineeComponent {
 
+export class TraineeComponent {
+  firstname: string=""
+  lastname: string=""
+  email: string=""
+  password: string=""
+
+  constructor(private http:HttpClient){
+
+  }
+
+  ngOnInit():void{
+
+  }
+
+  register(){
+    let bodyData={
+      "firstname": this.firstname,
+      "lastname": this.lastname,
+      "email": this.email,
+      "password": this.password,
+      "role": "trenee"
+    }
+    this.http.post("http://localhost:3000/trener/create", bodyData).subscribe((resultData: any)=>{
+      console.log(resultData)
+      alert("Подопечный зарегестрирован зарегестрирован")
+    })
+  }
+
+  save(){
+    this.register()
+  }
 }

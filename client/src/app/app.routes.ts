@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { TrainerComponent } from './trainer/trainer.component';
 import { RoleComponent } from './role/role.component';
 import { TraineeComponent } from './trainee/trainee.component';
+import { AccountraineeComponent } from './accountrainee/accountrainee.component';
+import { AccountrainerComponent } from './accountrainer/accountrainer.component';
 
 export const routes: Routes = [{
     path:"login",
@@ -25,6 +27,14 @@ export const routes: Routes = [{
 {
     path: 'register/:role', 
     component: RoleComponent
+},
+{
+    path: 'accountrenee', 
+    component: AccountraineeComponent
+},
+{
+    path: 'accountrener', 
+    component: AccountrainerComponent
 },
 ];
 

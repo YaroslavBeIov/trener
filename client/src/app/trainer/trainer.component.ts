@@ -29,7 +29,8 @@ export class TrainerComponent {
       "firstname": this.firstname,
       "lastname": this.lastname,
       "email": this.email,
-      "password": this.password
+      "password": this.password,
+      "role": "trener"
     }
     this.http.post("http://localhost:3000/trener/create", bodyData).subscribe((resultData: any)=>{
       console.log(resultData)

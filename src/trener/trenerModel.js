@@ -19,6 +19,10 @@ var trenerSchema = new Schema({
         type: String,
         required: true
     },
+    role:{
+        type: String,
+        required: true
+    }
 })
 
-module.exports = mongoose.model('trener', trenerSchema)
+module.exports = mongoose.model('trainers', trenerSchema)
