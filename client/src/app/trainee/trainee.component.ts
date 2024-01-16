@@ -32,7 +32,7 @@ export class TraineeComponent {
       "password": this.password,
       "role": "trenee"
     }
-    this.http.post("http://localhost:3000/trener/create", bodyData).subscribe((resultData: any)=>{
+    this.http.post("http://localhost:3000/trainee/create", bodyData).subscribe((resultData: any)=>{
       console.log(resultData)
       alert("Подопечный зарегестрирован зарегестрирован")
     })

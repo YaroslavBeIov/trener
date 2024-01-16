@@ -29,11 +29,11 @@ export const routes: Routes = [{
     component: RoleComponent
 },
 {
-    path: 'accountrenee', 
+    path: 'accountrainee',
     component: AccountraineeComponent
 },
 {
-    path: 'accountrener', 
+    path: 'accountrainer',
     component: AccountrainerComponent
 },
 ];
