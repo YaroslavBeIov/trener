@@ -1,7 +1,21 @@
-<header>
+
+  <header>
     <button class="trenerby-btn" (click)="redirectToHome()">TrenerBy</button>
-</header>
-<router-outlet></router-outlet>
-<footer>
+    <div class="auth-buttons" *ngIf="!isLoggedIn">
+      <button (click)="redirectTo('tolog/role')">Войти</button>
+      <button (click)="redirectTo('register/role')">Зарегистрироваться</button>
+    </div>
+    <div class="auth-buttons" *ngIf="isLoggedIn">
+    <button (click)="redirectTo(getMyPageRoute())">Моя страница</button>
+    <button (click)="redirectTo(getMyPageRoute())">Друзья</button>
+    <button (click)="redirectTo('settingsTrainee')">Настройки</button>
+    <button (click)="logout()">Выйти</button>
+    </div>
+  </header>
+  <body class="trener">
+    <router-outlet></router-outlet>
+  </body>
+  <footer>
     &copy; 2024 TrenerBy.BelovProdakshen. Все права защищены.
-</footer>
+  </footer>
+

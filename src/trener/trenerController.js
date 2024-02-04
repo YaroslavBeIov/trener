@@ -20,7 +20,7 @@ var loginTrenerControllerFn = async (req, res) => {
     try {
         result = await trenerService.loginTrenerDBService(req.body)
         if(result.status)
-        res.send({"status": true, "message": result.msg, "role": result.role})
+        res.send({"status": true, "message": result.msg, "role": result.role, "id": result.id})
         else
         res.send({"status": false, "message": result.msg})
     } catch (error) {

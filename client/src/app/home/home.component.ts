@@ -13,12 +13,4 @@ export class HomeComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  ngOnInit() {
-    // Проверка статуса авторизации при инициализации компонента
-    this.isAuthenticated = this.authService.isLoggedIn();
-  }
-
-  redirectTo(route: string) {
-    this.router.navigate([`/${route}`]);
-  }
 }

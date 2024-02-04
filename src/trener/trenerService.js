@@ -28,14 +28,14 @@ module.exports.loginTrenerDBService = async (trenerDetails) => {
             const decrypted = encryptor.decrypt(result.password);
 
             if (decrypted === trenerDetails.password) {
-                return { status: true, msg: "Проверка проведена успешно", role: result.role }
+                return { status: true, msg: "Проверка проведена успешно", role: result.role, id: result.id }
             } else {
                 return { status: false, msg: "Несовпадает пароль" }
             }
         } else {
-            return { status: false, msg: "Все плохо" }
+            return { status: false, msg: "Все плохо, тренер не вдул" }
         }
     } catch (error) {
-        return { status: false, msg: "Всё плохо" }
+        return { status: false, msg: "Всё плохо, тренеру не вдули" }
     }
 };

@@ -1,16 +1,23 @@
 import { RouterModule, Routes } from '@angular/router';
 import {NgModule} from '@angular/core'
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { TrainerComponent } from './trainer/trainer.component';
+import { TrainerComponent } from './registerTrainer/trainer.component';
 import { RoleComponent } from './role/role.component';
-import { TraineeComponent } from './trainee/trainee.component';
-import { AccountraineeComponent } from './accountrainee/accountrainee.component';
-import { AccountrainerComponent } from './accountrainer/accountrainer.component';
+import { TraineeComponent } from './registerTrainee/trainee.component';
+import { AccountraineeComponent } from './AccountTrainee/accountrainee/accountrainee.component';
+import { AccountrainerComponent } from './AccountTrainer/accountrainer/accountrainer.component';
+import { TologComponent } from './tolog/tolog.component';
+import { LoginTrainerComponent } from './loginTrainer/logintrainer.component';
+import { LoginTraineeComponent } from './loginTrainee/logintrainee.component';
+import { SettingstraineeComponent } from './AccountTrainee/settingsTrainee/settingsTrainee.component';
 
 export const routes: Routes = [{
-    path:"login",
-    component: LoginComponent
+    path:"logintrainer",
+    component: LoginTrainerComponent
+},
+{
+    path:"logintrainee",
+    component: LoginTraineeComponent,
 },
 {
     path:"home",
@@ -25,7 +32,7 @@ export const routes: Routes = [{
     component: TraineeComponent,
 },
 {
-    path: 'register/:role', 
+    path: 'register/role', 
     component: RoleComponent
 },
 {
@@ -35,6 +42,18 @@ export const routes: Routes = [{
 {
     path: 'accountrainer',
     component: AccountrainerComponent
+},
+{
+    path: 'tolog/role',
+    component: TologComponent
+},
+{
+    path: 'settingsTrainer',
+    component: TologComponent
+},
+{
+    path: 'settingsTrainee',
+    component: SettingstraineeComponent
 },
 ];
 

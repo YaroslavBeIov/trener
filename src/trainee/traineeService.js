@@ -33,9 +33,9 @@ module.exports.loginTraineeDBService = async (traineeDetails) => {
                 return { status: false, msg: "Несовпадает пароль" }
             }
         } else {
-            return { status: false, msg: "Все плохо" }
+            return { status: false, msg: "Все плохо, тренируемый не зашел" }
         }
     } catch (error) {
-        return { status: false, msg: "Всё плохо" }
+        return { status: false, msg: "Всё плохо, тренируемого ебут" }
     }
 };

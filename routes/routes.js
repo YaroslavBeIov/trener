@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/trener/login', trenerController.loginTrenerControllerFn);
 router.post('/trener/create', trenerController.createTrenerControllerFn);
 router.post('/trainee/login', traineeController.loginTraineeControllerFn);
-router.post('/trainee/create', traineeController.createTraineeControllerFn);
+router.post('/trainee/create', traineeController.createTraineeControllerFn);  
 
 module.exports = router;
 
