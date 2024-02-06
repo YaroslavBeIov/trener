@@ -11,6 +11,7 @@ import { CookieService } from 'ngx-cookie-service'
   templateUrl: './logintrainee.component.html',
   styleUrl: './logintrainee.component.css'
 })
+
 export class LoginTraineeComponent {
   email: string = ""
   password: string = ""
@@ -45,9 +46,9 @@ export class LoginTraineeComponent {
             tenSecondsFromNow.setSeconds(tenSecondsFromNow.getSeconds() + 3600)
             localStorage.setItem('userRole', this.role)
             this.cookieService.set('id', this.id, tenSecondsFromNow)
-            this.cookieService.set('userRole', this.role)
-            this.cookieService.set('isLoggedIn', 'true')
-            this.router.navigate(['/accountrainee'])
+            this.cookieService.set('userRole', this.role, tenSecondsFromNow)
+            this.cookieService.set('isLoggedIn', 'true', tenSecondsFromNow)
+            this.router.navigate(['/accountrainee/profileTrainee'])
           } else {
             alert("Неправильный пароль или email")
             console.log("Ошибка авторизации")

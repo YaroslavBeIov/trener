@@ -6,9 +6,12 @@
       <button (click)="redirectTo('register/role')">Зарегистрироваться</button>
     </div>
     <div class="auth-buttons" *ngIf="isLoggedIn">
-    <button (click)="redirectTo(getMyPageRoute())">Моя страница</button>
-    <button (click)="redirectTo(getMyPageRoute())">Друзья</button>
-    <button (click)="redirectTo('settingsTrainee')">Настройки</button>
+    <button (click)="redirectTo('accountrainee/profileTrainee')">Профиль</button>
+    <button (click)="redirectTo('accountrainee/dietrainee')">Питание</button> 
+    <button (click)="redirectTo(getMyPageRoute())">Мой тренер</button>
+    <button (click)="redirectTo(getMyPageRoute())">Фитнесс</button> <!-- Для всяких видюшек с бабами и трясущими жопы мужиками(медитации, тренировки для похудения, наращивание массы) -->
+    <button (click)="redirectTo(getMyPageRoute())">Статистика</button> 
+    <button (click)="redirectTo('accountrainee/settingsTrainee')">Настройки</button>
     <button (click)="logout()">Выйти</button>
     </div>
   </header>

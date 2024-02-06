@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+</head>
+<body>
+    <div class="meal-container">
+        <h2>Ваш рацион на сегодня</h2>
+        <div *ngFor="let meal of meals" class="meal-item">
+          <div class="meal-info">
+            <label for="mealName">Наименование приема пищи:</label>
+            <input type="text" id="mealName" [(ngModel)]="meal.name" placeholder="Введите название приема пищи">
+          </div>
+          <div class="meal-details">
+            <div *ngFor="let product of meal.products" class="product-item">
+              <label for="productName">Наименование продукта:</label>
+              <input type="text" id="productName" [(ngModel)]="product.name" placeholder="Введите название продукта">
+      
+              <label for="productGrams">Количество грамм:</label>
+              <input type="number" id="productGrams" [(ngModel)]="product.grams" placeholder="Введите количество грамм">
+      
+              <button (click)="removeProduct(meal, product)">Удалить продукт</button>
+            </div>
+      
+            <button (click)="addProduct(meal)">Добавить продукт</button>
+          </div>
+          <button (click)="removeMeal(meal)">Удалить</button>
+        </div>
+        <button (click)="addMeal()">Добавить новый прием пищи</button>
+        <button (click)="submitMeals()">Отправить данные на сервер</button>
+      </div>         
+</body>
+</html>

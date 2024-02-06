@@ -4,12 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { TrainerComponent } from './registerTrainer/trainer.component';
 import { RoleComponent } from './role/role.component';
 import { TraineeComponent } from './registerTrainee/trainee.component';
-import { AccountraineeComponent } from './AccountTrainee/accountrainee/accountrainee.component';
+import { DietraineeComponent } from './AccountTrainee/dietrainee/dietrainee.component';
 import { AccountrainerComponent } from './AccountTrainer/accountrainer/accountrainer.component';
 import { TologComponent } from './tolog/tolog.component';
 import { LoginTrainerComponent } from './loginTrainer/logintrainer.component';
 import { LoginTraineeComponent } from './loginTrainee/logintrainee.component';
 import { SettingstraineeComponent } from './AccountTrainee/settingsTrainee/settingsTrainee.component';
+import { ProfiletraineeComponent } from './AccountTrainee/profileTrainee/profileTrainee.component';
 
 export const routes: Routes = [{
     path:"logintrainer",
@@ -36,24 +37,28 @@ export const routes: Routes = [{
     component: RoleComponent
 },
 {
-    path: 'accountrainee',
-    component: AccountraineeComponent
+    path: 'accountrainee/profileTrainee',
+    component: ProfiletraineeComponent
 },
 {
-    path: 'accountrainer',
-    component: AccountrainerComponent
+    path: 'accountrainee/dietrainee',
+    component: DietraineeComponent
+},
+{
+    path: 'accountrainee/settingsTrainee',
+    component: SettingstraineeComponent
 },
 {
     path: 'tolog/role',
     component: TologComponent
 },
 {
-    path: 'settingsTrainer',
-    component: TologComponent
+    path: 'accountrainer',
+    component: AccountrainerComponent
 },
 {
-    path: 'settingsTrainee',
-    component: SettingstraineeComponent
+    path: 'accountrainer/settingsTrainer',
+    component: TologComponent
 },
 ];
 

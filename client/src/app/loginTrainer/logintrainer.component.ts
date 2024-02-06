@@ -20,11 +20,12 @@ export class LoginTrainerComponent {
   role: string = ""
   id: string = ""
   
-  constructor(private router: Router, 
+  constructor(
+    private router: Router, 
     private http: HttpClient, 
     private ngZone: NgZone,
     private cookieService: CookieService,
-    ){}
+  ) {}
 
   login(){
     let bodyData = {

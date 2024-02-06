@@ -16,7 +16,7 @@ export class AuthService {
   isLoggedIn$ = this.loggedInSource.asObservable();
   
   login(role: string) {
-    this.isAuthenticated = true;
+    this.isAuthenticated = true; 
     this.userRole = role; // Установка роли при входе
     this.cookieService.set('authToken', 'yourAuthToken'); // Задайте ваш токен
     this.cookieService.set('userRole1', role); // Сохранение роли в куках

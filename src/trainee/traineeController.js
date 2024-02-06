@@ -20,7 +20,7 @@ var loginTraineeControllerFn = async (req, res) => {
     try {   
         result = await traineeService.loginTraineeDBService(req.body)
         if(result.status)
-        res.send({"status": true, "message": result.msg, "role": result.role})
+        res.send({"status": true, "message": result.msg, "role": result.role, "id": result.id})
         else
         res.send({"status": false, "message": result.msg})
     } catch (error) {

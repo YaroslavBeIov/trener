@@ -28,7 +28,7 @@ module.exports.loginTraineeDBService = async (traineeDetails) => {
             const decrypted = encryptor.decrypt(result.password);
 
             if (decrypted === traineeDetails.password) {
-                return { status: true, msg: "Проверка проведена успешно", role: result.role }
+                return { status: true, msg: "Проверка проведена успешно", role: result.role, id: result.id }
             } else {
                 return { status: false, msg: "Несовпадает пароль" }
             }
