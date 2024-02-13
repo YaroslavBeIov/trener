@@ -1,48 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.settings-container {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
+.settings {
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.user-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+.settings h2 {
+    text-align: center;
 }
 
-.input-group {
-    margin-bottom: 20px;
+.form-group {
+    margin-bottom: 15px;
 }
 
-.input-group label {
+label {
     display: block;
     margin-bottom: 5px;
 }
 
-.input-group input {
+input[type="text"],
+input[type="number"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
 }
 
 button {
-    background-color: #4caf50;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.texting{
+    color: white
 }
