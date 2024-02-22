@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import {NgModule} from '@angular/core'
+import { NgModule } from '@angular/core'
 import { HomeComponent } from './home/home.component';
 import { TrainerComponent } from './registerTrainer/trainer.component';
 import { RoleComponent } from './role/role.component';
@@ -10,7 +10,7 @@ import { TologComponent } from './tolog/tolog.component';
 import { LoginTrainerComponent } from './loginTrainer/logintrainer.component';
 import { LoginTraineeComponent } from './loginTrainee/logintrainee.component';
 import { SettingstraineeComponent } from './AccountTrainee/settingsTrainee/settingsTrainee.component';
-import { ProfiletraineeComponent } from './AccountTrainee/profileTrainee/profileTrainee.component';
+import { ProfileTraineeComponent } from './AccountTrainee/profileTrainee/profileTrainee.component';
 
 export const routes: Routes = [{
     path:"logintrainer",
@@ -38,7 +38,7 @@ export const routes: Routes = [{
 },
 {
     path: 'accountrainee/profileTrainee',
-    component: ProfiletraineeComponent
+    component: ProfileTraineeComponent
 },
 {
     path: 'accountrainee/dietrainee',

@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
+
 
 interface User {
-  name: string;
+  firstname: string;
   age: string;
   height: string;
   weight: string;
@@ -15,29 +17,35 @@ interface User {
   standalone: true,
   templateUrl: './settingsTrainee.component.html',
   styleUrls: ['./settingsTrainee.component.css'],
-  imports: [FormsModule, CommonModule,HttpClientModule]
+  imports: [FormsModule, CommonModule, HttpClientModule]
 })
 
 export class SettingstraineeComponent {
   user: User = {
-    name: "", //Добавить инфу о фотографии пользователя
+    firstname: "",
     age: "",
     height: "",
     weight: ""
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  saveSettings() {
-    this.http.post('http://example.com/save-user-settings', this.user)
-      .subscribe(
-        (response) => {
-          console.log('Настройки сохранены успешно', response);
-        },
-        (error) => {
-          console.error('Ошибка при сохранении настроек', error);
-        }
-      );
-  }
+    saveSettings() {
+      const userId = this.cookieService.get('id');
+      if (!userId) {
+        console.error('Идентификатор пользователя не найден в куках');
+        return;
+      }
+
+      const url = `http://localhost:3000/trainee/settings/${userId}`; // Добавляем идентификатор пользователя в URL
+      this.http.post(url, this.user)
+        .subscribe(
+          (response) => {
+            console.log('Настройки сохранены успешно', response);
+          },
+          (error) => {
+          }
+        );
+    }
 }
 

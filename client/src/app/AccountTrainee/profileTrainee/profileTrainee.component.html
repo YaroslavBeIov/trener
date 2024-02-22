@@ -11,10 +11,10 @@
             <img src="https://yurkas.ru/upload/Sh/imageCache/153/946/9467644104719508.png" alt="User Picture">
         </div>
         <div class="profile-info">
-            <h2>Имя пользователя</h2>
-            <p>Возраст: <span id="age">-</span></p>
-            <p>Рост: <span id="height">-</span></p>
-            <p>Вес: <span id="weight">-</span></p>
+            <h2>Имя пользователя: {{ userData.firstname }}</h2>
+            <p>Возраст: <span id="age">{{ userData.age }}</span></p>
+            <p>Рост: <span id="height">{{ userData.height }}</span></p>
+            <p>Вес: <span id="weight">{{ userData.weight }}</span></p>
         </div>
     </div>
 </body>

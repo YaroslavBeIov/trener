@@ -22,6 +22,18 @@ var traineeSchema = new Schema({
     role:{
         type: String,
         required: true
+    },
+    age: {
+        type: String,
+        default: 'Unknown'
+    },
+    height: {
+        type: String,
+        default: 'Unknown'
+    },
+    weight: {
+        type: String,
+        default: 'Unknown'
     }
 })
 
