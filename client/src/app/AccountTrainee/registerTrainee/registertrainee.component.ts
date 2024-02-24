@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-trainer',
   standalone: true,
   imports: [FormsModule, HttpClientModule],
-  templateUrl: './trainee.component.html',
-  styleUrl: './trainee.component.css'
+  templateUrl: './registertrainee.component.html',
+  styleUrl: './registertrainee.component.css'
 })
 
 export class TraineeComponent {

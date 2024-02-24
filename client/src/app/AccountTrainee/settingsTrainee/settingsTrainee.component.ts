@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 interface User {
+  avatar: File | null;
   firstname: string;
   age: string;
   height: string;
@@ -25,7 +26,8 @@ export class SettingstraineeComponent {
     firstname: "",
     age: "",
     height: "",
-    weight: ""
+    weight: "",
+    avatar: null
   };
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
@@ -37,7 +39,7 @@ export class SettingstraineeComponent {
         return;
       }
 
-      const url = `http://localhost:3000/trainee/settings/${userId}`; // Добавляем идентификатор пользователя в URL
+      const url = `http://localhost:3000/trainee/settings/${userId}`;
       this.http.post(url, this.user)
         .subscribe(
           (response) => {

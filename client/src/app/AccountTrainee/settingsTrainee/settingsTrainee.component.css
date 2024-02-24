@@ -25,14 +25,16 @@ input[type="number"] {
     padding: 8px;
     font-size: 16px;
     border-radius: 3px;
-    border: 1px solid #ccc;
 }
 
 button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: #007bff;
+    background: #f7f21a;
+    background: linear-gradient(241deg,#f7f21a 0%, #767204 80%);
+    background: -webkit-linear-gradient(241deg,#f7f21a 0%, #767204 80%);
+    background: -moz-linear-gradient(241deg,#f7f21a 0%, #767204 80%);
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -44,6 +46,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-.texting{
-    color: white
+.texting {
+    color: black
 }

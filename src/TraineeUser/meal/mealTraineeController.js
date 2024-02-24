@@ -1,4 +1,4 @@
-const Meal = require('./mealModel');
+const Meal = require('./mealTraineeModel');
 
 
 var mealControllerFn = async (req, res) => {
@@ -6,12 +6,12 @@ var mealControllerFn = async (req, res) => {
   try {
     const mealsData = req.body.meals;
     const userId = req.body.userId;
-    const date = req.body.formattedDate
+    const dates = req.body.formattedDate
 
     const allData = {
       userId: userId,
       meals: mealsData,
-      data: date
+      date: dates
     };
 
     await Meal.create(allData);

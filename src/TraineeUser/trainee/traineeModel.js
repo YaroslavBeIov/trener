@@ -2,7 +2,10 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var traineeSchema = new Schema({
-
+    avatar:{
+        type: String,
+        default: 'Unknown'
+    },
     firstname:{
         type: String,
         required: true

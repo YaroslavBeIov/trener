@@ -1,0 +1,46 @@
+<body>
+  <div class="fitness-container">
+    <div class="exercise-buttons">
+      <button (click)="toggleVideo('chest')">Грудь</button>
+      <button (click)="toggleVideo('back')">Спина</button>
+      <button (click)="toggleVideo('shoulders')">Плечи</button>
+      <button (click)="toggleVideo('legs')">Ноги</button>
+    </div>
+  
+    <div class="exercise-videos">
+        <div *ngIf="showChestVideos">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YmsAlACFDS0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pTsViGMYoq4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/I-AOmYIM2Ik" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Wyqco55W8aQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      <div *ngIf="showBackVideos">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xe4uPMnnsLM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/I5VKKGjlgQU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      </div>
+      <div *ngIf="showShouldersVideos">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_E-oC91kSvU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ckC-P2xUPPc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div *ngIf="showLegsVideos">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9UAW39h9AwY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/py_7MLifWbQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="text">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ipsum feugiat, semper odio eget, scelerisque velit. Aenean at eleifend magna. Donec consectetur accumsan quam, ut sagittis urna accumsan vitae. Aliquam viverra hendrerit condimentum. Sed feugiat quam sed mauris euismod aliquet. Maecenas eget nunc lorem. Mauris lacinia, massa at hendrerit bibendum, mi velit vestibulum velit, id viverra nisi eros ut lorem. Sed vulputate venenatis libero, at finibus elit venenatis in. Etiam id metus et erat rutrum iaculis ac a dolor. Morbi ullamcorper quis tortor in pulvinar.
+
+        Sed erat elit, ultrices eget lorem at, sodales mattis orci. Donec vel tempor nunc, vel pulvinar neque. Nullam porttitor nibh nec malesuada sodales. Suspendisse non mi in lacus fermentum fermentum. Quisque porttitor gravida enim sed scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sollicitudin volutpat convallis. Pellentesque a nibh leo. Aenean volutpat nisi neque, in volutpat enim sagittis in. Curabitur dictum vitae urna et bibendum. Suspendisse pellentesque tellus sit amet elit posuere, quis pulvinar ante interdum. Vivamus ut dolor sit amet metus pharetra eleifend a nec nibh. Quisque vel erat sit amet tortor dictum tincidunt. Proin suscipit tempor urna, eu viverra mauris pretium vitae. Maecenas eu mauris urna.
+
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nec lectus mollis, accumsan erat sit amet, molestie lectus. Duis enim enim, hendrerit in ipsum at, tristique scelerisque magna. Curabitur nec porta neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin sit amet posuere ex. Curabitur hendrerit neque non ultricies faucibus. Donec velit quam, rhoncus sed urna vitae, vehicula malesuada orci. Fusce rutrum metus sed sollicitudin congue. Nullam vitae mattis ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed augue neque, tincidunt in sapien ut, auctor aliquet lorem. Integer mattis hendrerit odio eu vehicula. Donec fringilla volutpat ligula at sollicitudin. Nullam leo mi, aliquet id purus vitae, placerat accumsan lorem.
+
+        Donec massa sapien, vehicula in semper in, eleifend iaculis augue. Phasellus a orci odio. Etiam erat lorem, pellentesque id placerat eu, scelerisque et velit. Fusce sed porttitor leo. Nullam sit amet euismod urna. Nunc cursus elit odio, nec congue diam sodales et. Maecenas nulla mauris, consequat ac mauris sed, aliquam malesuada nunc. Vestibulum ut eros quis orci aliquet vehicula sed vel neque. Nulla commodo malesuada urna at molestie. Sed mattis dui metus, et cursus felis finibus a. Mauris sed lectus pharetra, maximus est sed, posuere tortor. Morbi hendrerit turpis ac sapien lacinia porttitor. Nulla sagittis risus massa, a semper lectus mollis id. Curabitur tempor diam sit amet venenatis volutpat. Morbi ullamcorper in tellus sit amet tristique. Etiam ex sem, aliquam eget lobortis nec, condimentum et risus.
+
+        Nunc et pulvinar elit, vitae maximus tellus. Integer eu bibendum ante, et luctus lorem. Integer rhoncus elit in ultrices fermentum. Morbi dapibus, ante et lacinia rhoncus, leo mi tincidunt nulla, eu iaculis neque purus a nunc. In malesuada, risus non dapibus tristique, sem nulla sodales nunc, et scelerisque dui lectus ac nisl. Maecenas ultricies metus nec ex elementum, a posuere diam pharetra. Aenean eu nunc faucibus, interdum nulla in, consectetur sem. Donec ultrices, elit id efficitur accumsan, neque metus egestas urna, eget lobortis tellus massa ac eros. Donec elit risus, bibendum quis augue ac, molestie facilisis sem. Nulla condimentum ante vitae odio porttitor laoreet. Mauris interdum turpis a venenatis lobortis. Quisque in dui quam. Duis malesuada molestie leo id sodales. Aenean dignissim justo id felis bibendum, in lobortis elit efficitur. Donec a lorem purus. Vivamus ac scelerisque ipsum, ut blandit nulla
+      </p>
+    </div>
+  </div>
+</body>
+  

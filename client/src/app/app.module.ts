@@ -8,7 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app.routes";
 import { RoleComponent } from "./role/role.component";
-import { TraineeComponent } from "./registerTrainee/trainee.component";
+import { TraineeComponent } from "./AccountTrainee/registerTrainee/registertrainee.component";
 import { CommonModule } from "@angular/common";
 
 

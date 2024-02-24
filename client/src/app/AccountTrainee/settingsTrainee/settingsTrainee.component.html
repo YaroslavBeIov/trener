@@ -2,6 +2,10 @@
     <h2 class="texting">Настройки пользователя</h2>
     <form (ngSubmit)="saveSettings()">
         <div class="form-group">
+            <label class="texting" for="avatar">Фотография:</label>
+            <input type="file" id="avatar" avatar="avatar" [(ngModel)]="user.avatar">
+        </div>
+        <div class="form-group">
             <label class="texting" for="name">Имя:</label>
             <input type="text" id="name" name="name" [(ngModel)]="user.firstname">
         </div>
@@ -17,7 +21,7 @@
             <label class="texting" for="weight">Вес (кг):</label>
             <input type="number" id="weight" name="weight" [(ngModel)]="user.weight">
         </div>
-        <button class="texting" type="submit">Сохранить</button>
+        <button class="button-save" type="submit">Сохранить</button>
     </form>
 </div>
 

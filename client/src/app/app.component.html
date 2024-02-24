@@ -1,18 +1,18 @@
-
+<html>
   <header>
-    <button class="trenerby-btn" (click)="redirectToHome()">TrenerBy</button>
+    <h1 class="trenerby-btn" (click)="redirectToHome()">TB</h1>
     <div class="auth-buttons" *ngIf="!isLoggedIn">
-      <button (click)="redirectTo('tolog/role')">Войти</button>
-      <button (click)="redirectTo('register/role')">Зарегистрироваться</button>
+      <button class="route-buttons" (click)="redirectTo('tolog/role')">Войти</button>
+      <button class="route-buttons" (click)="redirectTo('register/role')">Зарегистрироваться</button>
     </div>
     <div class="auth-buttons" *ngIf="isLoggedIn">
-    <button (click)="redirectTo('accountrainee/profileTrainee')">Профиль</button>
-    <button (click)="redirectTo('accountrainee/dietrainee')">Питание</button> 
-    <button (click)="redirectTo(getMyPageRoute())">Мой тренер</button>
-    <button (click)="redirectTo(getMyPageRoute())">Фитнесс</button> <!-- Для всяких видюшек с бабами и трясущими жопы мужиками(медитации, тренировки для похудения, наращивание массы) -->
-    <button (click)="redirectTo(getMyPageRoute())">Статистика</button> 
-    <button (click)="redirectTo('accountrainee/settingsTrainee')">Настройки</button>
-    <button (click)="logout()">Выйти</button>
+    <button class="route-buttons" (click)="redirectTo('accountrainee/profileTrainee')">Профиль</button>
+    <button class="route-buttons" (click)="redirectTo('accountrainee/dietrainee')">Питание и активность</button> 
+    <button class="route-buttons" (click)="redirectTo(getMyPageRoute())">Мой тренер</button>
+    <button class="route-buttons" (click)="redirectTo('accountrainee/fitnessTrainee')">Фитнесс</button>
+    <button class="route-buttons" (click)="redirectTo('accountrainee/statisticTrainee')">Статистика</button> 
+    <button class="route-buttons" (click)="redirectTo('accountrainee/settingsTrainee')">Настройки</button>
+    <button class="route-buttons" (click)="logout()">Выйти</button>
     </div>
   </header>
   <body class="trener">
@@ -21,4 +21,5 @@
   <footer>
     &copy; 2024 TrenerBy.BelovProdakshen. Все права защищены.
   </footer>
+</html>
 

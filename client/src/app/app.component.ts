@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +19,6 @@ export class AppComponent {
   constructor(
     private router: Router, 
     private cookieService: CookieService,
-    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -50,10 +48,10 @@ export class AppComponent {
   }
 
   logout() {
-    localStorage.removeItem('userRole'); // Удаление роли из локального хранилища
-    this.cookieService.deleteAll(); // Удаление всех кук
-    this.isLoggedIn = false; //Устанавливаем значение false для авторизации
-    this.router.navigate(['/home']); // Перенаправление на главную страницу после выхода
+    localStorage.removeItem('userRole')
+    this.cookieService.deleteAll()
+    this.isLoggedIn = false
+    this.router.navigate(['/home'])
   }
 }
 

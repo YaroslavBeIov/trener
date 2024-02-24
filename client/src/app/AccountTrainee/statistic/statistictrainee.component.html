@@ -1,0 +1,25 @@
+<div class="statistics">
+    <div class="date">Дата: {{ selectedDate }}</div>
+    <div class="meal">
+      <h3>Потребленная пища</h3>
+      <ul>
+        <ng-container *ngFor="let meal of meals">
+          <li>{{ meal.name }}</li>
+          <ul>
+            <ng-container *ngFor="let product of meal.products">
+              <li>{{ product.name }} ({{ product.grams }} г)</li>
+            </ng-container>
+          </ul>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="activity">
+      <h3>Активность</h3>
+      <ul>
+        <li>Количество шагов: {{ steps }}</li>
+        <li>Вес: {{ weight }} кг</li>
+      </ul>
+    </div>
+</div>
+  
+
