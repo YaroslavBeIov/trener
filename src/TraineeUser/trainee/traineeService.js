@@ -5,7 +5,7 @@ var encryptor = require('simple-encryptor')(key)
 module.exports.createTraineeDBService = async (traineeDetails) => {
     try {
         var traineeModelData = new traineeModel()
-
+// Заполнение полей записи данными из запроса, шифрование пароля
         traineeModelData.firstname = traineeDetails.firstname
         traineeModelData.lastname = traineeDetails.lastname
         traineeModelData.email = traineeDetails.email

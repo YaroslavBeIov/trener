@@ -1,5 +1,5 @@
 var traineeService = require('./traineeService.js')
-
+// Определение асинхронной функции для создания ученика
 var createTraineeControllerFn = async (req, res) => {
     try {
         console.log(req.body)
@@ -14,7 +14,7 @@ var createTraineeControllerFn = async (req, res) => {
         console.log(err);
     }    
 }
-
+// Определение асинхронной функции для входа ученика в систему
 var loginTraineeControllerFn = async (req, res) => {
     var result = null
     try {   

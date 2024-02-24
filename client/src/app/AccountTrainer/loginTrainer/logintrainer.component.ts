@@ -26,7 +26,7 @@ export class LoginTrainerComponent {
     private ngZone: NgZone,
     private cookieService: CookieService,
   ) {}
-
+// Метод для входа пользователя
   login(){
     let bodyData = {
       email: this.email,
@@ -38,7 +38,7 @@ export class LoginTrainerComponent {
         this.id = resultData.id
         console.log("Вы успешно проникли", resultData)
         console.log("Роль, полученная с сервера:", this.role)
-
+//для обновления интерфейса
         this.ngZone.run(() => {
           if (resultData.status) {
             const tenSecondsFromNow = new Date();

@@ -21,23 +21,23 @@ export class TraineeComponent {
   }
 
   ngOnInit():void{
-
   }
-
+// Метод для регистрации пользователя
   register(){
-    let bodyData={
+    let bodyData={// Данные для отправки на сервер
       "firstname": this.firstname,
       "lastname": this.lastname,
       "email": this.email,
       "password": this.password,
       "role": "trenee"
     }
+
     this.http.post("http://localhost:3000/trainee/create", bodyData).subscribe((resultData: any)=>{
       console.log(resultData)
       alert("Подопечный зарегестрирован зарегестрирован")
     })
   }
-
+ // Метод для сохранения данных
   save(){
     this.register()
   }

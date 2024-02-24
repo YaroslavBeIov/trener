@@ -1,5 +1,5 @@
 var trenerService = require('./trenerService.js')
-
+// Определение асинхронной функции для создания тренера
 var createTrenerControllerFn = async (req, res) => {
     try {
         console.log(req.body)
@@ -14,7 +14,7 @@ var createTrenerControllerFn = async (req, res) => {
         console.log(err);
     }    
 }
-
+// Определение асинхронной функции для входа тренера в систему
 var loginTrenerControllerFn = async (req, res) => {
     var result = null
     try {

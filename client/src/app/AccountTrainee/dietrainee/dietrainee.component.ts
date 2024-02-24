@@ -14,6 +14,11 @@ interface Product {
   grams: number;
 }
 
+interface Activity {
+  steps: String,
+  weight: String
+}
+
 @Component({
   selector: 'app-dietrainee',
   standalone: true,
@@ -25,15 +30,18 @@ interface Product {
 export class DietraineeComponent {
   meals: Meal[] = [];
   userId: string = "";
+  activity: Activity = { steps: "0", weight: "0" };
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
     this.userId = this.cookieService.get('id');
   }
 
+  // Метод для добавления нового приема пищи
   addMeal() {
     this.meals.push({ name: '', products: [] });
   }
 
+  // Метод для удаления приема пищи
   removeMeal(meal: Meal) {
     const index = this.meals.indexOf(meal);
     if (index !== -1) {
@@ -41,10 +49,12 @@ export class DietraineeComponent {
     }
   }
 
+  // Метод для добавления нового продукта к приему пищи
   addProduct(meal: Meal) {
     meal.products.push({ name: '', grams: 0 });
   }
 
+  // Метод для удаления продукта из приема пищи
   removeProduct(meal: Meal, product: Product) {
     const index = meal.products.indexOf(product);
     if (index !== -1) {
@@ -52,21 +62,20 @@ export class DietraineeComponent {
     }
   }
 
+  // Метод для отправки данных о приемах пищи на сервер
   submitMeals() {
     const currentDate = new Date();
     const formattedDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
-    const allData = { userId: this.userId, meals: this.meals, formattedDate: formattedDate };
+    const allData = { userId: this.userId, meals: this.meals, formattedDate: formattedDate, activity: this.activity};
 
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');  // Создаем заголовки запроса
     
     this.http.post('http://localhost:3000/trainee/meals', allData, { headers }).subscribe(
       response => {
         console.log('Данные успешно отправлены на сервер:', response);
-        // Здесь вы можете добавить логику обработки успешной отправки
       },
       error => {
         console.error('Ошибка при отправке данных на сервер:', error);
-        // Здесь вы можете добавить логику обработки ошибки
       }
     );
   }

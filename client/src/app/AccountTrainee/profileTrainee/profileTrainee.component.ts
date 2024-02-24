@@ -34,14 +34,14 @@ export class ProfileTraineeComponent implements OnInit {
       })
     );
   }
-
+// Метод, вызываемый при инициализации компонента
   ngOnInit(): void {
     const userId = this.cookieService.get('id');
     if (!userId) {
       console.error('Идентификатор пользователя не найден в куках');
       return;
     }
-
+// Получаем данные пользователя и подписываемся на результат
     this.getUserData(userId)
       .subscribe((data: any) => {
         this.userData = data;

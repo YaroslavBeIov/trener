@@ -1,10 +1,10 @@
 <div class="settings">
     <h2 class="texting">Настройки пользователя</h2>
     <form (ngSubmit)="saveSettings()">
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label class="texting" for="avatar">Фотография:</label>
             <input type="file" id="avatar" avatar="avatar" [(ngModel)]="user.avatar">
-        </div>
+        </div> -->
         <div class="form-group">
             <label class="texting" for="name">Имя:</label>
             <input type="text" id="name" name="name" [(ngModel)]="user.firstname">
@@ -22,6 +22,9 @@
             <input type="number" id="weight" name="weight" [(ngModel)]="user.weight">
         </div>
         <button class="button-save" type="submit">Сохранить</button>
+        <div *ngIf="settingsSavedMessage" class="success-message">
+            {{ settingsSavedMessage }}
+        </div>
     </form>
 </div>
 

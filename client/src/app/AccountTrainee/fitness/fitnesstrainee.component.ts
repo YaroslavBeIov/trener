@@ -1,5 +1,3 @@
-// fitness.component.ts
-
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -15,7 +13,6 @@ export class FitnessTraineeComponent {
   showBackVideos: boolean = false;
   showShouldersVideos: boolean = false;
   showLegsVideos: boolean = false;
-  // Добавьте здесь другие переменные для других упражнений
 
   toggleVideo(exercise: string): void {
     this.resetVideos();

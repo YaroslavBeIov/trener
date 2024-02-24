@@ -14,6 +14,12 @@ const mealSchema = new mongoose.Schema({
       ],
     },
   ],
+  activityDataFull: [
+    {
+      steps: String,
+      weight: String
+    }
+  ]
 });
 
 const Meal = mongoose.model('Meal', mealSchema);

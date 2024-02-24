@@ -1,9 +1,9 @@
-const Meal = require('./mealModel');
+const stata = require('./mealModel');
 
 exports.getAllMeals = async () => {
   try {
-    const meals = await Meal.find();
-    return meals;
+    const statistic = await stata.find();
+    return statistic;
   } catch (error) {
     throw error;
   }

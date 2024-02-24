@@ -1,5 +1,5 @@
 const settingsService = require('./settingsService');
-
+// Определение асинхронной функции для сохранения настроек пользователя
 var saveUserSettings = async (req, res) => {
     const userData = req.body;
     const userId = req.params.id;

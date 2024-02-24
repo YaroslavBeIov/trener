@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
-import { TrainerComponent } from "./registerTrainer/trainer.component";
-import { LoginTrainerComponent } from "./loginTrainer/logintrainer.component";
+import { TrainerComponent } from "./AccountTrainer/registerTrainer/trainer.component";
+import { LoginTrainerComponent } from "./AccountTrainer/loginTrainer/logintrainer.component";
 import { HomeComponent } from "./home/home.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";

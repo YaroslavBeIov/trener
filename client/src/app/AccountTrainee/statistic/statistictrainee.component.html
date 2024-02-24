@@ -1,25 +1,27 @@
-<div class="statistics">
-    <div class="date">Дата: {{ selectedDate }}</div>
+<div *ngFor="let userDataItem of userData" class="statistics">
+    <div class="date">Дата: {{ userDataItem.date }}</div>
     <div class="meal">
-      <h3>Потребленная пища</h3>
-      <ul>
-        <ng-container *ngFor="let meal of meals">
-          <li>{{ meal.name }}</li>
-          <ul>
-            <ng-container *ngFor="let product of meal.products">
-              <li>{{ product.name }} ({{ product.grams }} г)</li>
+        <h3>Потребленная пища</h3>
+        <ul>
+            <ng-container *ngFor="let meal of userDataItem.meals">
+                <li>{{ meal.name }}</li>
+                <ul>
+                    <ng-container *ngFor="let product of meal.products">
+                        <li>{{ product.name }} ({{ product.grams }} г)</li>
+                    </ng-container>
+                </ul>
             </ng-container>
-          </ul>
-        </ng-container>
-      </ul>
+        </ul>
     </div>
     <div class="activity">
-      <h3>Активность</h3>
-      <ul>
-        <li>Количество шагов: {{ steps }}</li>
-        <li>Вес: {{ weight }} кг</li>
-      </ul>
+        <h3>Активность</h3>
+        <ul>
+            <li *ngFor="let activityData of userDataItem.activityDataFull">
+                Количество шагов: {{ activityData.steps }}
+            </li>
+            <li *ngFor="let activityData of userDataItem.activityDataFull">
+                Вес: {{ activityData.weight }} кг
+            </li>
+        </ul>
     </div>
 </div>
-  
-

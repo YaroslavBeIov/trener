@@ -3,6 +3,22 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { Observable, catchError, map } from 'rxjs';
+
+interface Meal {
+  name: string;
+  products: Product[];
+}
+
+interface Product {
+  name: string;
+  grams: number;
+}
+
+interface Activity {
+  steps: string;
+  weight: string;
+}
 
 @Component({
     standalone: true,
@@ -12,30 +28,39 @@ import { CookieService } from 'ngx-cookie-service';
     imports: [FormsModule, CommonModule, HttpClientModule]
 })
 export class StatisticTraineeComponent implements OnInit {
-    selectedDate: string = '';
-    meals: { name: string, products: { name: string, grams: number }[] }[] = [];
-    steps: number = 0;
-    weight: number = 0;
+    userData: any = {
+        date: '',
+        meals: [],
+        activity: { steps: '0', weight: '0' }
+    };
 
-    constructor(private http: HttpClient, private cookieService: CookieService,) { }
-
+    constructor(private http: HttpClient, private cookieService: CookieService) { }
+// Метод, вызываемый при инициализации компонента
     ngOnInit(): void {
         const userId = this.cookieService.get('id');
-        this.http.get<any>(`http://localhost:3000/trainee/statistic/${userId}`)
-        .subscribe((data: any) => {
-            console.log('Received data:', data);
-            if (data && data.meals && Array.isArray(data.meals)) {
-              this.selectedDate = data.date; // Устанавливаем дату
-              this.meals = data.meals.map((meal: any) => {
-                return {
-                  mealType: meal.name,
-                  food: meal.products.map((product: any) => product.name).join(', '), // Объединяем названия продуктов через запятую
-                  grams: meal.products.reduce((total: number, product: any) => total + product.grams, 0) // Суммируем граммы продуктов
-                };
-              });
-              this.steps = data.steps; // Устанавливаем количество шагов
-              this.weight = data.weight; // Устанавливаем вес
-            }
-          });
+        if (!userId) {
+            console.error('Идентификатор пользователя не найден в куках');
+            return;
+        }
+
+        this.getUserData(userId)
+            .subscribe((data: any) => {
+                console.log(data);
+                this.userData = Object.values(data);
+            });
+    }
+// Метод для получения данных пользователя
+    getUserData(userId: string): Observable<any> {
+        const url = `http://localhost:3000/trainee/statistic/${userId}`;
+        return this.http.get(url).pipe(
+            map((response: any) => {
+                return response;
+            }),
+            catchError((error: any) => {
+                console.error('Ошибка при загрузке данных пользователя', error);
+                return ('Ошибка при загрузке данных пользователя');
+            })
+        );
     }
 }
+

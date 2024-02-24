@@ -1,5 +1,5 @@
 const profileTraineeService = require ('./profileTraineeService')
-
+// Определение асинхронной функции для получения профиля пользователя
 var getUserProfile = async (req, res) => {
   const userId = req.params.id;
 
